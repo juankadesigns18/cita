@@ -1,0 +1,54 @@
+---
+import astroLogo from '../assets/astro.svg';
+import background from '../assets/background.svg';
+
+const navItems = [
+  { name: "Inicio", href: "#", active: true },
+  { name: "Agencias", href: "#" },
+  { name: "Horarios", href: "#" },
+  { name: "Tarifas", href: "#" },
+  { name: "Abonos", href: "#" },
+  { name: "Noticias", href: "#" },
+  { name: "Reclamos", href: "#" },
+  { name: "Encomiendas", href: "#" },
+  { name: "Contacto", href: "#" },
+  { name: "Trabaja con nosotros", href: "#" },
+
+
+];
+---
+
+<header class="flex items-center justify-between p-4 bg-white shadow-md">
+  <!-- Logo -->
+  <div class="flex items-center gap-4">
+    <img src="/src/assets/logo-cita.png" alt="Logo" class="w-48" />
+    <nav class="flex space-x-6">
+      {navItems.map((item) => (
+        <a href={item.href} class={`text-gray-500 hover:text-black ${item.active ? "font-bold relative after:content-[''] after:block after:w-full after:h-1 after:bg-yellow-400 after:absolute after:bottom-[-6px] after:left-0" : ""}`}>
+          {item.name}
+        </a>
+      ))}
+    </nav>
+  </div>
+
+  <!-- Notificación y Perfil -->
+  <div class="flex items-center gap-4">
+    <button class="text-gray-500 hover:text-black">
+      <i class="bell-icon"></i>
+    </button>
+    <img src="/src/assets/burger-menu.svg" alt="User Avatar" class="w-8 h-8 hover:opacity-50 cursor-pointer" />
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
